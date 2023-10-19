@@ -151,7 +151,7 @@ class StateMachine:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 400, 70
+        self.x, self.y = 400, 60
         self.frame = 0
         self.action = 3 # 오른쪽 Idle
         self.dir = 0
@@ -170,7 +170,7 @@ class Boy:
         self.state_machine.draw()
 
     def fire_ball(self):
-        ball = Ball()
+        ball = Ball(self.x, self.y, 1, self.face_dir)
         # 생성한 볼을 월드에 넣어줘야 한다.
         game_world.add_object(ball, 1)
         if self.face_dir == -1:
